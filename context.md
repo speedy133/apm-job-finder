@@ -1,0 +1,101 @@
+# APM Job Finder - Context & Problem Statement
+
+## Background
+Aspiring Product Managers often spend several hours each week searching for relevant job opportunities across multiple platforms such as LinkedIn, Wellfound, company career pages, Greenhouse boards, and Lever postings.
+
+The current job discovery process is fragmented and inefficient because:
+- Opportunities are spread across multiple websites.
+- Users repeatedly search the same platforms.
+- Many startup openings are missed.
+- There is no consolidated view of PM hiring trends.
+- Users struggle to identify which skills are currently in demand.
+- Tracking previously viewed opportunities is difficult.
+
+As a result, candidates spend significant time collecting information instead of preparing for interviews and improving their skills.
+
+## Goal
+Build a centralized Product Management job discovery platform that:
+- Aggregates PM jobs from multiple sources.
+- Provides powerful search and filtering.
+- Displays market insights and hiring trends.
+- Allows users to save and track opportunities.
+- Reduces job search effort for PM candidates.
+
+## Target Users
+### Primary Users
+- **APM Aspirants:** Recent graduates or MBA students seeking Associate Product Manager roles.
+- **Career Switchers:** Professionals transitioning into Product Management from sales, marketing, consulting, engineering, or operations backgrounds.
+- **Early-Career Product Managers:** PMs with 0–3 years of experience looking for new opportunities.
+
+## User Pain Points
+### Pain Point 1: Fragmented Job Search
+Users must visit multiple websites daily to discover opportunities.
+*Current Behavior:* LinkedIn → Wellfound → Company Careers → Google Search → Repeat Daily
+*Impact:* Time-consuming and repetitive process.
+
+### Pain Point 2: Missed Opportunities
+Users miss startup openings.
+*Current Behavior:* Many startups post exclusively on Greenhouse, Lever, or Company websites. These openings may never appear on LinkedIn.
+*Impact:* Candidates miss relevant opportunities.
+
+### Pain Point 3: Lack of Market Insights
+Users lack visibility into hiring trends.
+*Questions Users Cannot Easily Answer:*
+- Which companies are hiring PMs?
+- Which skills appear most frequently?
+- Which locations have the most opportunities?
+- How many remote roles are available?
+
+### Pain Point 4: Difficult Opportunity Tracking
+Users struggle to track opportunities.
+*Current Behavior:* Users save browser tabs, spreadsheets, or screenshots.
+*Impact:* Disorganized job search workflow.
+
+## Success Metrics
+### North Star Metric
+**Weekly Active Job Seekers:** Number of unique users who perform at least one job search during a week.
+
+### Supporting Metrics
+- **Job Discovery:** Total jobs aggregated, New jobs added daily, Jobs viewed
+- **Engagement:** Searches performed, Filters used, Saved jobs
+- **Retention:** Weekly returning users, Monthly returning users
+
+## MVP Scope
+### Core Objective
+Enable users to discover Product Management jobs from multiple sources through a single platform.
+
+### MVP Features
+- **Feature 1: Job Aggregation:** Collect PM-related jobs from Greenhouse and Lever. Store jobs in a centralized database.
+- **Feature 2: Job Search:** Allow users to search jobs using keywords (e.g., Product Manager, Associate Product Manager, Product Analyst, Growth Product Manager).
+- **Feature 3: Job Filters:** Users can filter by Remote, Location, Company, Job Title.
+- **Feature 4: Job Detail Page:** Display Title, Company, Location, Description, Application Link, Source.
+- **Feature 5: Saved Jobs:** Authenticated users can Save jobs, Remove saved jobs, View saved jobs.
+
+### Out of Scope for MVP
+The following features will not be included in Version 1:
+- Resume upload
+- Resume matching
+- AI job scoring
+- Salary prediction
+- Email alerts
+- Mobile application
+- Cover letter generation
+
+## Technical Requirements
+- **Frontend:** Next.js, TypeScript, Tailwind CSS
+- **Backend:** Node.js + Express, TypeScript
+- **Database:** PostgreSQL (Provider: Neon)
+- **Authentication:** Clerk
+- **External Data Sources:** 
+  - Greenhouse (Public job board APIs)
+  - Lever (Public job posting APIs)
+
+## User Flow
+Landing Page → Search Jobs → Apply Filters → View Job Details → Save Job → Apply Externally
+
+## Future Roadmap
+### V2: Analytics Dashboard
+- **Features:** Hiring trends, Top hiring companies, Jobs by location, Remote vs Onsite distribution.
+
+### V3: AI Features
+- **Features:** Resume matching, Skill gap analysis, Job fit score, AI-generated job summaries.
