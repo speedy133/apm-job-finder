@@ -7,7 +7,9 @@ import { useJobs } from "@/hooks/useJobs";
 import { useSearchParams } from "next/navigation";
 import { Loader2 } from "lucide-react";
 
-export default function Home() {
+import { Suspense } from "react";
+
+function HomeContent() {
   const searchParams = useSearchParams();
   const page = parseInt(searchParams.get("page") || "1", 10);
   const search = searchParams.get("search") || "";
@@ -77,5 +79,17 @@ export default function Home() {
         </div>
       </div>
     </main>
+  );
+}
+
+export default function Home() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-1 items-center justify-center py-20">
+        <Loader2 className="h-8 w-8 animate-spin text-indigo-600" />
+      </div>
+    }>
+      <HomeContent />
+    </Suspense>
   );
 }

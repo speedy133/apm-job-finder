@@ -20,6 +20,8 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 
+import { Suspense } from "react";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -32,7 +34,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
       >
         <body className="min-h-full flex flex-col bg-zinc-50 dark:bg-black">
-          <Navbar />
+          <Suspense fallback={<div className="h-16 w-full border-b border-zinc-200 dark:border-zinc-800" />}>
+            <Navbar />
+          </Suspense>
           {children}
         </body>
       </html>
