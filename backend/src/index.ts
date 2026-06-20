@@ -47,6 +47,10 @@ app.use((err: any, req: Request, res: Response, next: express.NextFunction) => {
   }
 });
 
-app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+if (process.env.NODE_ENV !== 'production' || process.env.RUN_LOCAL === 'true') {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+}
+
+export default app;
