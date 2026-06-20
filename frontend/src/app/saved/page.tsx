@@ -58,7 +58,7 @@ export default function SavedJobsPage() {
             </div>
             <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">No saved jobs</h3>
             <p className="mt-1 max-w-sm text-center text-sm text-zinc-500 dark:text-zinc-400">
-              You haven't saved any jobs yet. Browse the feed and click the heart icon to save jobs here!
+              You haven&apos;t saved any jobs yet. Browse the feed and click the heart icon to save jobs here!
             </p>
           </div>
         )}

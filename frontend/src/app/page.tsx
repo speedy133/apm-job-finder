@@ -65,7 +65,7 @@ function HomeContent() {
             <div className="flex flex-1 flex-col items-center justify-center rounded-3xl border border-dashed border-zinc-300 py-20 dark:border-zinc-800">
               <h3 className="mt-2 text-sm font-semibold text-zinc-900 dark:text-zinc-100">No jobs found</h3>
               <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
-                Try adjusting your search or filters to find what you're looking for.
+                Try adjusting your search or filters to find what you&apos;re looking for.
               </p>
             </div>
           )}

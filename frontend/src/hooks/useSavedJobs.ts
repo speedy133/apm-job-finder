@@ -31,7 +31,7 @@ export const useSavedJobs = () => {
     const isCurrentlySaved = data?.savedJobs.some(j => j.id === jobId);
     
     mutate(
-      (currentData: any) => {
+      (currentData: { savedJobs: Job[] } | undefined) => {
         if (!currentData) return { savedJobs: [] };
         if (isCurrentlySaved) {
           return { savedJobs: currentData.savedJobs.filter((j: Job) => j.id !== jobId) };
