@@ -19,15 +19,4 @@ services:
       - key: FRONTEND_URL
         sync: false
 
-  - type: cron
-    name: apm-job-finder-ingestion
-    env: node
-    rootDir: backend
-    schedule: "0 */6 * * *" # Every 6 hours
-    buildCommand: npm install && npm run build
-    startCommand: npm run start:pipeline
-    envVars:
-      - key: NODE_ENV
-        value: production
-      - key: DATABASE_URL
-        sync: false
+
