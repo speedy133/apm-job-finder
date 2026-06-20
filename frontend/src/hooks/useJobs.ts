@@ -31,8 +31,10 @@ export const useJobs = (page: number, search: string, remote: boolean) => {
     ...(remote && { remote: 'true' })
   });
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
   const { data, error, isLoading } = useSWR<JobsResponse>(
-    `http://localhost:5000/api/jobs?${queryParams.toString()}`,
+    `${API_URL}/api/jobs?${queryParams.toString()}`,
     fetcher,
     { keepPreviousData: true }
   );

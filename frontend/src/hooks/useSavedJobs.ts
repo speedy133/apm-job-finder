@@ -16,8 +16,10 @@ export const useSavedJobs = () => {
     return res.json();
   };
 
+  const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000';
+
   const { data, error, mutate, isLoading } = useSWR<{ savedJobs: Job[] }>(
-    isLoaded && isSignedIn ? 'http://localhost:5000/api/saved' : null,
+    isLoaded && isSignedIn ? `${API_URL}/api/saved` : null,
     fetcher
   );
 
@@ -42,7 +44,7 @@ export const useSavedJobs = () => {
     );
 
     try {
-      const res = await fetch('http://localhost:5000/api/saved', {
+      const res = await fetch(`${API_URL}/api/saved`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
